@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewUser">
+
+    <TextView
+        android:id="@+id/enterNewUserTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:text="@string/enter_new_user_title"
+        android:textAlignment="center"
+        />
+
+    <EditText
+        android:id="@+id/enterFullName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:hint="@string/enter_full_name1"
+        />
+
+    <EditText
+        android:id="@+id/enterAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:hint="@string/enterAddress"
+        />
+
+    <EditText
+        android:id="@+id/enterEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:hint="@string/enterEmail"
+        />
+
+    <EditText
+        android:id="@+id/enterUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:hint="@string/enterUsername"
+        />
+
+    <EditText
+        android:id="@+id/enterPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:hint="@string/enterPassword"
+        />
+
+    <Button
+        android:id="@+id/submitNewUserButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="350dp"
+        android:text="@string/create_newAccount"
+        />
+
+
+
+
+</RelativeLayout>
