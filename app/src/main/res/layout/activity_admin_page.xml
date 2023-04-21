@@ -18,12 +18,12 @@
 
     <TextView
         android:id="@+id/userDisplay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="330dp"
+        android:layout_height="300dp"
         android:layout_marginTop="24dp"
-        android:layout_marginBottom="92dp"
+        android:layout_marginBottom="10dp"
         android:hint="@string/users"
-        android:maxLines="20"
+        android:maxLines="25"
         android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,12 +33,21 @@
 
     <CalendarView
         android:id="@+id/calendarView"
-        android:layout_width="254dp"
-        android:layout_height="227dp"
+        android:layout_width="315dp"
+        android:layout_height="270dp"
         android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/welcomeAdmin" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="145dp"
+        android:layout_height="33dp"
+        android:text="Switch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="349dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

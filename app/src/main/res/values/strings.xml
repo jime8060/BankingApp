@@ -58,4 +58,8 @@
     <string name="_2_years_int">2 Years</string>
     <string name="users">users</string>
     <string name="finance_tips">Finance Tips</string>
+    <string name="payment_name">Payment Name:</string>
+    <string name="add_notes">Add Notes:</string>
+    <string name="create_notification">Create Notification</string>
+    <string name="notifications">Notifications</string>
 </resources>

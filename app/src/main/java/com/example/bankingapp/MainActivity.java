@@ -8,11 +8,17 @@ Used GymLog app as a base
 
 package com.example.bankingapp;
 
+import static com.example.bankingapp.PaymentNotification.CHANNEL_1_ID;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.room.Room;
 
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -52,6 +58,11 @@ public class MainActivity extends AppCompatActivity {
     private SharedPreferences mPreferences = null;
     private User mUser;
     private Button mNewAcct;
+    private Button notificationsButton;
+    private NotificationManagerCompat notificationManager;
+    private EditText paymentNotificationTextTitle;
+    private EditText paymentNotificationDetailsText;
+
 
     // setters and getters
     public Button getNewAcct() {return mNewAcct;}
@@ -81,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
         mMainSubmitButton = findViewById(R.id.mainSubmitButton);
 
         refreshDisplay();
+
 
         // hit submit button and save entries to log
         mMainSubmitButton.setOnClickListener(new View.OnClickListener() {
@@ -119,9 +131,23 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button notificationsButton = findViewById(R.id.notificationsButton);
+        notificationsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openPaymentNotification();
+            }
+        });
+
+
     }
 
     //methods
+
+    public void openPaymentNotification(){
+        Intent intent = new Intent(this, PaymentNotification.class);
+        startActivity(intent);
+    }
 
     private void openFinanceTips(){
         Intent intent = new Intent(this, FinanceTips.class);
@@ -151,6 +177,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
 
     // scroll
     private void scroll(){

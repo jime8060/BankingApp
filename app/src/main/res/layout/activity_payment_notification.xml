@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:onClick="@string/create_notification"
+    tools:context=".PaymentNotification">
+
+    <EditText
+        android:id="@+id/paymentNotificationText"
+        android:layout_width="300dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="40dp"
+        android:hint="@string/payment_name"
+        android:importantForAutofill="no"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/paymentNotificationDetails"
+        android:layout_width="300dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="40dp"
+        android:hint="@string/add_notes"
+        android:importantForAutofill="no"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paymentNotificationText" />
+
+    <Button
+        android:id="@+id/createNotificationButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/create_notification"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paymentNotificationDetails" />
+</androidx.constraintlayout.widget.ConstraintLayout>
