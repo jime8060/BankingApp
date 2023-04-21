@@ -6,42 +6,39 @@
     android:layout_height="match_parent"
     tools:context=".AdminPage">
 
-    <EditText
+    <TextView
         android:id="@+id/welcomeAdmin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:ems="10"
-        android:inputType="textPersonName"
         android:text="@string/welcome_admin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="166dp"
-        android:layout_height="171dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcomeAdmin" />
-
-    <EditText
-        android:id="@+id/progressText"
-        android:layout_width="368dp"
-        android:layout_height="110dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/nothing_is_gonna_load"
-        android:textAlignment="center"
+    <TextView
+        android:id="@+id/userDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="92dp"
+        android:hint="@string/users"
+        android:maxLines="20"
+        android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+        app:layout_constraintTop_toBottomOf="@+id/calendarView"
+        app:layout_constraintVertical_bias="0.889" />
+
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="254dp"
+        android:layout_height="227dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/welcomeAdmin" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

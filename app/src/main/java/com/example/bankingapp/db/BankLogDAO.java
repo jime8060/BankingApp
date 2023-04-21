@@ -7,6 +7,7 @@ import androidx.room.Query;
 import androidx.room.Update;
 import androidx.room.Database;
 
+import com.example.bankingapp.AccountInfo;
 import com.example.bankingapp.BankLog;
 import com.example.bankingapp.User;
 
@@ -59,13 +60,13 @@ public interface BankLogDAO {
     @Delete
     void delete(AccountInfo...accountInfo);
 
-    @Query("SELECT * FROM " + AppDatabase.ACCOUNT_INFO)
+    @Query("SELECT * FROM " + BankAppDatabase.ACCOUNT_INFO)
     List<AccountInfo> getAllInfo();
 
-    @Query("SELECT * FROM " + AppDatabase.ACCOUNT_INFO + " WHERE mUserName = :username")
+    @Query("SELECT * FROM " + BankAppDatabase.ACCOUNT_INFO + " WHERE mUserName = :username")
     AccountInfo getAccountInfoByUsername(String username);
 
-    @Query("SELECT * FROM " + AppDatabase.ACCOUNT_INFO + " WHERE mUserId = :userId")
-    AccountInfo getAccountInfoByUserId(int userId);)
+    @Query("SELECT * FROM " + BankAppDatabase.ACCOUNT_INFO + " WHERE mUserId = :userId")
+    AccountInfo getAccountInfoByUserId(int userId);
 
 }

@@ -53,8 +53,9 @@ public class LoginActivity extends AppCompatActivity {
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                attempt++;
                 getValuesFromDisplay();
-                if(attempt>=3) {
+                if(attempt<=3) {
                     if (checkForUserInDatabase()) {
                         if (!validatePassword()) {
                             Toast.makeText(LoginActivity.this, "Invalid password", Toast.LENGTH_SHORT).show();
@@ -72,7 +73,7 @@ public class LoginActivity extends AppCompatActivity {
                         b.setVisibility(View.INVISIBLE);
                     }
                 }
-                attempt++;
+
             }
         });
 
