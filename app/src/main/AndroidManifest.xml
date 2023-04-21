@@ -12,6 +12,9 @@
         android:theme="@style/Theme.BankingApp"
         tools:targetApi="31">
         <activity
+            android:name=".FinanceTips"
+            android:exported="false" />
+        <activity
             android:name=".UserAccounts"
             android:exported="false" />
         <activity

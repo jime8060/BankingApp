@@ -12,8 +12,8 @@
         android:layout_height="238dp"
         android:layout_marginTop="20dp"
         android:text="@string/debug"
-        android:visibility="gone"
         android:textAlignment="center"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.649"
         app:layout_constraintStart_toStartOf="parent"
@@ -96,10 +96,10 @@
         android:text="@string/loan_calc"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintHorizontal_bias="0.071"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mainQuantityEditText"
-        app:layout_constraintVertical_bias="0.33" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/adminButton"
@@ -115,4 +115,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mainSubmitButton"
         app:layout_constraintVertical_bias="0.03" />
+
+    <Button
+        android:id="@+id/financeTipsButton"
+        android:layout_width="147dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/finance_tips"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.42"
+        app:layout_constraintStart_toEndOf="@+id/loanPageButton"
+        app:layout_constraintTop_toBottomOf="@+id/adminButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>

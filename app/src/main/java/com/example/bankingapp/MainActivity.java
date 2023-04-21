@@ -110,10 +110,23 @@ public class MainActivity extends AppCompatActivity {
                 openAdminPage();
             }
         });
+
+        Button financeTipsButton = findViewById(R.id.financeTipsButton);
+        financeTipsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openFinanceTips();
+            }
+        });
+
     }
 
     //methods
 
+    private void openFinanceTips(){
+        Intent intent = new Intent(this, FinanceTips.class);
+        startActivity(intent);
+    }
     private void openLoanCalc(){ // open loan page
         Intent intent = new Intent(this, LoanCalc.class);
         startActivity(intent);
