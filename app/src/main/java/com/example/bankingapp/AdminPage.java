@@ -4,8 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.bankingapp.db.BankAppDatabase;
 import com.example.bankingapp.db.BankLogDAO;
@@ -16,6 +20,8 @@ public class AdminPage extends AppCompatActivity {
 
     private BankLogDAO mBankLogDAO;
     private List<AccountInfo> mAccountInfos;
+    Button buttonDeleteUser;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +32,7 @@ public class AdminPage extends AppCompatActivity {
 
         mAccountInfos = mBankLogDAO.getAllInfo();
 
-        List<AccountInfo> getAllInfo = mBankLogDAO.getAllInfo();
+        List<AccountInfo> accountInfos = mBankLogDAO.getAllInfo();
         if(mAccountInfos.isEmpty()){
             AccountInfo defaultUser = new AccountInfo("Mike Jones", 123, "Main St.", "mike@csumb.edu", 1234, "mjones");
             mBankLogDAO.insert(defaultUser);
@@ -41,7 +47,7 @@ public class AdminPage extends AppCompatActivity {
         TextView textView = findViewById(R.id.userDisplay);
         StringBuilder sb = new StringBuilder();
 
-        for(AccountInfo accountInfo : getAllInfo){
+        for(AccountInfo accountInfo : accountInfos){
 
             sb.append("List of accounts: " + "\n");
             sb.append("Username: " + accountInfo.getUsername() + "\n");
@@ -54,7 +60,24 @@ public class AdminPage extends AppCompatActivity {
 
         textView.setText(sb.toString());
 
+        Button buttonDeleteUser = findViewById(R.id.buttonDeleteUser);
+        buttonDeleteUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                deleteUser();
+
+            }
+        });
+
+
     }
+
+    private void deleteUser(){
+        User userToDelete = mBankLogDAO.getUserName("testuser1");
+        mBankLogDAO.delete(userToDelete);
+        Toast.makeText(AdminPage.this, "Account deleted", Toast.LENGTH_SHORT).show();
+    }
+
 
     private void getDatabase() {
         mBankLogDAO = Room.databaseBuilder(this, BankAppDatabase.class, BankAppDatabase.DB_NAME)

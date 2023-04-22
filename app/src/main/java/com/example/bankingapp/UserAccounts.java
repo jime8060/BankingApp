@@ -30,7 +30,7 @@ public class UserAccounts extends AppCompatActivity {
         getDatabase();
 
 
-        List<AccountInfo> getAllInfo = mBankLogDAO.getAllInfo();
+        List<AccountInfo> accountInfos = mBankLogDAO.getAllInfo();
         AccountInfo defaultUser = new AccountInfo("Mike Jones", 123, "Main St.", "mike@csumb.edu", 1234, "mjones");
         mBankLogDAO.insert(defaultUser);
         AccountInfo mjimenez = new AccountInfo("Miguel Jimenez", 2323, "Main Road", "mig@csumb.edu", 2323, "mjimenez");
